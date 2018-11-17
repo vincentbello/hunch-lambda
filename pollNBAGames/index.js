@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const SSH = require('simple-ssh');
 
-exports.handler = async function() {
+exports.handler = function(evt, context, callback) {
   const ssh = new SSH({
     host: process.env.EC2_HOSTNAME,
     user: process.env.EC2_USER,
@@ -14,8 +14,7 @@ exports.handler = async function() {
     .exec('cd ~/hunch/current/api && yarn run poll-games', {
       err: console.error.bind(console),
       out: console.log.bind(console),
+      exit: code => callback(null, `Completed script with code ${code}`),
     })
     .start();
-
-  return 'Completed script.';
 };
