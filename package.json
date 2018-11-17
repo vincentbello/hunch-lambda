@@ -1,0 +1,18 @@
+{
+  "name": "hunch-lambda",
+  "version": "1.0.0",
+  "description": "Lambda functions for the Hunch project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hunch-lambda"
+  },
+  "author": "Vincent Bello",
+  "license": "ISC",
+  "dependencies": {
+    "simple-ssh": "^1.0.0"
+  }
+}
